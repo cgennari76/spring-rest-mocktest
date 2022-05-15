@@ -1,21 +1,15 @@
 pipeline {
-    agent none
+    agent any
     stages {
-        stage('Build with Maven Container') {
-            agent {
-             docker {
-              image 'maven:3.5.0'
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
             }
         }
-        steps {
-             sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+        stage('Test') {
+            steps {
+                sh 'mvn test'
             }
-        }
-        stage('Docker Build') {
-             agent any
-             steps {
-                 sh 'docker build -t cgennari76/spring-rest-mock:latest .'
-             }
         }
     }
 }
