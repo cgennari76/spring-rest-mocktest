@@ -11,5 +11,10 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('Docker build') {
+            steps {
+                sh 'docker build -t cgennari76/springmocktest:latest .'
+            }
+        }
     }
 }
