@@ -4,9 +4,9 @@
    - name: pull an image
      docker_container:
        name: nginx
-	     image: "nginx:latest"
-	     state: started
-	     ports:
+	   image: "nginx:latest:
+	   state: started
+	   ports:
          - "8081:8081"
        exposed_ports:
-	       - 8081
+	     - 8081
