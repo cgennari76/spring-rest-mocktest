@@ -1,11 +1,13 @@
 pipeline {
     agent any
-
+    environment {
+     ANSIBLE_PRIVATE_KEY=credentials('docker-hosts-key')
+    }
     stages {
         stage('Deploy') {
             steps {
                 sshagent(['jenkins_agent']) {
-                    sh "ansible-playbook -i inventory.ini deploy.yml"
+                    sh "ansible-playbook -i inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY deploy.yml"
                 }
             }
         }
