@@ -5,7 +5,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sshagent(['jenkins_agent']) {
-                    sh "ansible-playbook -i inventory.ini build.yml"
+                    sh "ansible-playbook -i inventory.ini deploy.yml"
                 }
             }
         }
