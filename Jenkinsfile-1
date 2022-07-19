@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Deploy') {
+            steps {
+                sshagent(['jenkins_agent']) {
+                    sh "ansible-galaxy --version"
+                    sh "ansible-playbook --version"
+                
+                }
+            }
+        }
+    }
+}
