@@ -2,9 +2,9 @@
 - hosts: docker_hosts
   tasks:
    - name: pull an image
-     docker_container:
+       docker_container:
        name: nginx
-	   image: "nginx:latest"
-	   state: started
-	   ports:
+       image: "nginx:latest"
+       state: started
+       ports:
          - "8081:80"
