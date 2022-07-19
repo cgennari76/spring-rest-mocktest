@@ -4,7 +4,7 @@
    - name: pull an image
      docker_container:
        name: nginx
-	   image: "nginx:latest:
+	   image: "nginx:latest"
 	   state: started
 	   ports:
          - "8081:80"
