@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Hello') {
       agent {
-        docker { label 'ansible-docker-slave' }
+        docker { image 'chrisgennari/dry-run-cloud:ansible-docker-slave' }
       }
       steps {
         sh "ansible-galaxy  --version"
