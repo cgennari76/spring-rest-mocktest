@@ -1,8 +1,11 @@
 pipeline {
-  agent {label 'ansible-docker-slave'}
+  agent any
   
   stages {
-    stage('Hello') {
+    stage('Hello')
+      agent {
+        docker { label 'ansible-docker-slave' }
+      }
       steps {
         sh "ansible-galaxy  --version"
 	sh "ansible-playbook --version"
