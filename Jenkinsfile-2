@@ -3,10 +3,10 @@ pipeline {
   
   stages {
     stage('Hello')
-	  steps {
-	    sh "ansible-galaxy  --version"
-		sh "ansible-playbook --version"
-	  }
-	}
+      steps {
+        sh "ansible-galaxy  --version"
+	sh "ansible-playbook --version"
+      }
+    }
   }
 }
