@@ -4,7 +4,10 @@ pipeline {
   stages {
     stage('Hello') {
       agent {
-        docker { image 'chriswayg/docker-alpine-ansible' }
+        docker { 
+	         image 'chriswayg/docker-alpine-ansible'
+		 args '--entrypoint='
+	       }
       }
       steps {
         sh "ansible-galaxy  --version"
