@@ -10,8 +10,8 @@ pipeline {
 	       }
       }
       steps {
-        sh "ansible-galaxy  --version"
-	sh "ansible-playbook --version"
+        sh "sudo ansible-galaxy  --version"
+	sh "sudo ansible-playbook --version"
       }
     }
   }
