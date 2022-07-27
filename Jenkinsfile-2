@@ -5,11 +5,11 @@ pipeline {
     stage('Hello') {
       agent {
         docker { 
-	         image 'chrisgennari/dry-run-cloud:jenkins-ansible'
+	         image 'maven:3.8.1-adoptopenjdk-11'
 	       }
       }
       steps {
-        sh 'ansible --version'
+        sh 'mvn --version'
       }
     }
   }
