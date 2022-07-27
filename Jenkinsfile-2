@@ -5,7 +5,7 @@ pipeline {
     stage('Hello') {
       agent {
         docker { 
-	         image 'maven:3.8.1-adoptopenjdk-11'
+	         image 'chrisgennari/dry-run-cloud:jenkins-ansible'
 		 args '-u root'
 	       }
       }
