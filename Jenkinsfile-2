@@ -6,7 +6,6 @@ pipeline {
       agent {
         docker { 
 	         image 'chrisgennari/dry-run-cloud:jenkins-ansible'
-		 args '--entrypoint='
 	       }
       }
       steps {
