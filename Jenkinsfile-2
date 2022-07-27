@@ -9,8 +9,8 @@ pipeline {
 	       }
       }
       steps {
-        sh "which ansible"
-	sh "ansible --version"
+        sh 'which ansible'
+	sh 'ansible --version'
       }
     }
   }
